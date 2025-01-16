@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Cactus Classical Serif", 微軟正黑體;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100vh;
+    background: lightskyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-imgs {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.slider {
+    width: 150px;
+    height: 500px;
+    cursor: pointer;
+    transition: .6s;
+    position: relative;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    /* 滿版不會拉伸 */
+    object-fit: cover;
+}
+
+/* 選取第一張和最後一張 */
+.slider-imgs .slider:first-child,
+.slider-imgs .slider:last-child {
+    height: 400px;
+}
+
+/* .slider-imgs .silder:nth-child(元素編號)*/
+/* 選取指定相片第二張和四張 */
+.slider-imgs .slider:nth-child(2),
+.slider-imgs .slider:nth-child(4) {
+    height: 450px;
+}
+
+.slider h1 {
+    font-size: 36px;
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transition: 0.6s;
+}
+
+.slider.active {
+    width: 450px !important;
+}
+
+.slider.active h1 {
+    display: none;
+}
